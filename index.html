@@ -6,17 +6,19 @@
     <title>$KOZHI - KOKARAKO KOOOO!!! 🐔💥</title>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Bangers&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!-- Favicon - Replace with your logo URL -->
-    <link rel="icon" href="https://www.pokerstrategy.com/wp-content/uploads/2025/08/chicken-game-gambling-sites.jpg" type="image/jpg">
+    <!-- Favicon - Your logo -->
+    <link rel="icon" href="KOZHILOGO.jpg" type="image/jpg">
     <style>
-        body { margin: 0; font-family: 'Comic Neue', cursive; background: linear-gradient(to bottom, #FF4500, #FFD700); color: yellow; text-align: center; overflow-x: hidden; }
+        body { margin: 0; font-family: 'Comic Neue', cursive; background: linear-gradient(to bottom, #FF4500, #FFD700); color: yellow; text-align: center; overflow-x: hidden; position: relative; }
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
         header { padding: 150px 20px; background: url('REDROOSTERMIC.jpeg') center/cover no-repeat; position: relative; }
         header::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
         .hero-content { position: relative; z-index: 1; }
-        .logo { width: 150px; height: 150px; border-radius: 50%; border: 10px solid lime; box-shadow: 0 0 40px red; transition: transform 0.5s; margin-bottom: 20px; }
+        .logo { width: 150px; height: 150px; border-radius: 50%; border: 10px solid lime; box-shadow: 0 0 40px red; transition: transform 0.5s; position: absolute; top: 10px; left: 10px; z-index: 10; }
         .logo:hover { transform: rotate(360deg) scale(1.2); }
-        h1 { font-family: 'Bangers', cursive; font-size: 7em; text-shadow: 6px 6px 12px black, 0 0 30px red; animation: shake 1.5s infinite; display: inline-block; vertical-align: middle; margin: 0 20px; }
+        .x-logo { width: 50px; height: 50px; position: absolute; top: 35px; right: 20px; z-index: 10; transition: transform 0.3s; }
+        .x-logo:hover { transform: scale(1.2); }
+        h1 { font-family: 'Bangers', cursive; font-size: 7em; text-shadow: 6px 6px 12px black, 0 0 30px red; animation: shake 1.5s infinite; }
         h2 { font-family: 'Bangers', cursive; font-size: 5em; text-shadow: 5px 5px black; animation: pulse 2s infinite; }
         p { font-size: 2em; max-width: 900px; margin: 30px auto; text-shadow: 3px 3px black; }
         section { padding: 80px 20px; background: rgba(0,0,0,0.8); margin: 40px auto; max-width: 1200px; border-radius: 40px; box-shadow: 0 0 40px lime; }
@@ -27,6 +29,9 @@
         .meme-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
         footer { padding: 50px; background: black; font-size: 1.5em; }
         .copyright { font-size: 1.2em; margin-top: 30px; color: #aaa; }
+        .social-logos { display: flex; justify-content: center; gap: 50px; margin: 40px 0; flex-wrap: wrap; }
+        .social-logo { width: 70px; height: 70px; transition: transform 0.3s; }
+        .social-logo:hover { transform: scale(1.3); }
         @keyframes shake { 0% { transform: translate(0); } 25% { transform: translate(10px, -10px); } 50% { transform: translate(-10px, 10px); } 100% { transform: translate(0); } }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
         @keyframes bounce { 0% { transform: translateY(0); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0); } }
@@ -35,12 +40,17 @@
 <body>
     <div id="particles-js"></div>
 
+    <!-- Main Logo - Top Left -->
+    <img src="KOZHILOGO.jpg" alt="$KOZHI Logo" class="logo">
+
+    <!-- Top Right X Logo (Clickable) -->
+    <a href="https://x.com/kozhi" target="_blank">
+        <img src="https://pngimg.com/d/x_logo_PNG13.png" alt="X Profile" class="x-logo">
+    </a>
+
     <header>
         <div class="hero-content">
-            <!-- LOGO ON RIGHT TOP -->
-            <img src="KOZHILOGO.jpg" alt="$KOZHI Logo" class="logo">
             <h1>$KOZHI</h1>
-            
             <h2>KOKARAKO KOOOOOOOO!!!</h2>
             <p>100% PURE MEMECOIN MADE FOR ABSOLUTELY NOTHING. NO ROADMAP, NO UTILITY, JUST KERALA ROOSTER SCREAMING AT THE MOON WHILE DOG COINS SLEEP 😴🐔🚀</p>
             <p>GUESS WHAT? CHICKEN BUTT... TO 100X!!!</p>
@@ -76,9 +86,18 @@
 
     <section>
         <h2>JOIN THE CHICKEN RAID FLOCK 🐓🐓🐓</h2>
-        <p>X: @KozhiCoin (FOLLOW OR NO TENDIES)<br>
-        TELEGRAM: t.me/KozhiCoin (WHERE WE PLOT WORLD DOMINATION)<br>
-        DEXSCREENER: (PASTE CHART LINK OR WE JEET)</p>
+        <div class="social-logos">
+            <!-- X (Clickable - only one with link) -->
+            <a href="https://x.com/kozhi" target="_blank">
+                <img src="https://pngimg.com/d/x_logo_PNG13.png" alt="X" class="social-logo">
+            </a>
+            <!-- Telegram (Logo only, no link yet) -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="social-logo">
+            <!-- Discord (Logo only, no link yet) -->
+            <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6918e57475a843f59f_icon_clyde_black_RGB.svg" alt="Discord" class="social-logo">
+            <!-- DexScreener (Logo only) -->
+            <img src="https://dexscreener.com/favicon-32x32.png" alt="DexScreener" class="social-logo">
+        </div>
         <p>MORE MEMES INCOMING. SEND YOUR BEST CHICKEN MEMES OR GET EGGED 🥚</p>
     </section>
 
@@ -96,10 +115,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
