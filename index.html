@@ -8,169 +8,215 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <link rel="icon" href="KOZHILOGO.jpg" type="image/jpg">
     <style>
-        body { 
-            margin: 0; 
-            font-family: 'Comic Neue', cursive; 
-            background: linear-gradient(to bottom, #FF0000, #FFA500, #FFD700); 
-            color: yellow; 
-            text-align: center; 
-            overflow-x: hidden; 
-            position: relative; 
-            padding-top: 140px; /* Extra space for nav + logo */
+        body {
+            margin: 0;
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(to bottom, #FF0000, #FFA500, #FFD700);
+            color: yellow;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
         }
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
 
-        /* Logo - positioned on the top left */
-        .logo { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 50%; 
-            border: 8px solid lime; 
-            box-shadow: 0 0 40px red; 
-            transition: transform 0.5s; 
-            position: fixed; 
-            top: 70px; /* Below nav */
-            left: 20px; 
-            z-index: 20; 
+        /* Full-screen hero with rooster background */
+        header#home {
+            background: url('REDROOSTERMIC.jpg') center/cover no-repeat;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0 20px;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        /* Navigation at the very top */
+        nav {
+            position: relative;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 40px 20px; /* Extra top padding for breathing room */
+            background: transparent;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 8px solid lime;
+            box-shadow: 0 0 40px red;
+            transition: transform 0.5s;
+            z-index: 11;
         }
         .logo:hover { transform: rotate(360deg) scale(1.2); }
 
-        header { 
-            No padding; 
-            background: url('REDROOSTERMIC.jpg') center/cover no-repeat; 
-            position: relative; 
-        }
-        header::after { 
-            content: ''; 
-            position: absolute; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.6); 
-        }
-        .hero-content { position: relative; z-index: 1; }
-
-        h1 { 
-            font-family: 'Bangers', cursive; 
-            font-size: 6em; 
-            margin: 0; 
-            text-shadow: 6px 6px 12px black, 0 0 30px red; 
-            animation: shake 1.5s infinite; 
-        }
-        h2 { 
-            font-family: 'Bangers', cursive; 
-            font-size: 4em; 
-            text-shadow: 5px 5px black; 
-            animation: pulse 2s infinite; 
-            margin-top: 30px; 
-        }
-        p { 
-            font-size: 1.8em; 
-            max-width: 900px; 
-            margin: 25px auto; 
-            text-shadow: 3px 3px black; 
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        section { 
-            padding: 80px 20px; 
-            background: rgba(0,0,0,0.85); 
-            margin: 40px auto; 
-            max-width: 1200px; 
-            border-radius: 40px; 
-            box-shadow: 0 0 40px lime; 
+        nav a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px black;
+            background: transparent;
+            padding: 10px 18px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            color: #FFFF00;
+            background: rgba(0, 255, 0, 0.4);
+            text-shadow: 0 0 20px lime;
+            transform: scale(1.1);
         }
 
-        .buy-btn { 
-            background: linear-gradient(purple, lime); 
-            color: black; 
-            padding: 25px 50px; 
-            font-size: 2.5em; 
-            border: 8px dashed yellow; 
-            border-radius: 50px; 
-            cursor: pointer; 
-            margin: 40px; 
-            box-shadow: 0 0 30px white; 
-            transition: all 0.3s; 
-            animation: bounce 1s infinite; 
+        /* Hero content starts below navigation */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 40px; /* Space below navigation */
+        }
+
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 6em;
+            margin: 0 0 20px;
+            text-shadow: 6px 6px 12px black, 0 0 30px red;
+            animation: shake 1.5s infinite;
+        }
+        h2 {
+            font-family: 'Bangers', cursive;
+            font-size: 4em;
+            text-shadow: 5px 5px black;
+            animation: pulse 2s infinite;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 1.8em;
+            max-width: 900px;
+            margin: 25px auto;
+            text-shadow: 3px 3px black;
+        }
+        section {
+            padding: 80px 20px;
+            background: rgba(0,0,0,0.85);
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 40px;
+            box-shadow: 0 0 40px lime;
+        }
+        .buy-btn {
+            background: linear-gradient(purple, lime);
+            color: black;
+            padding: 25px 50px;
+            font-size: 2.5em;
+            border: 8px dashed yellow;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 40px;
+            box-shadow: 0 0 30px white;
+            transition: all 0.3s;
+            animation: bounce 1s infinite;
         }
         .buy-btn:hover { transform: scale(1.3) rotate(10deg); }
-
-        .presale-banner { 
-            background: linear-gradient(to right, lime, yellow); 
-            color: black; 
-            padding: 20px; 
-            border-radius: 20px; 
-            margin: 30px auto; 
-            max-width: 900px; 
-            font-size: 1.8em; 
-            font-weight: bold; 
+        .presale-banner {
+            background: linear-gradient(to right, lime, yellow);
+            color: black;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 900px;
+            font-size: 1.8em;
+            font-weight: bold;
         }
-
-        .meme-gallery { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 20px; 
+        .meme-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             margin: 30px 0;
         }
-        img.meme { 
-            width: 100%; 
-            max-width: 300px; 
-            border-radius: 50%; 
-            border: 12px solid lime; 
-            box-shadow: 0 0 40px red; 
-            transition: transform 0.5s; 
+        img.meme {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            border: 12px solid lime;
+            box-shadow: 0 0 40px red;
+            transition: transform 0.5s;
         }
         img.meme:hover { transform: rotate(360deg) scale(1.2); }
-
-        .social-logos { 
-            display: flex; 
-            justify-content: center; 
-            gap: 40px; 
-            margin: 50px 0; 
-            flex-wrap: wrap; 
+        .social-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            flex-wrap: wrap;
         }
-        .social-logo { 
-            width: 70px; 
-            height: 70px; 
-            transition: transform 0.3s; 
+        .social-logo {
+            width: 70px;
+            height: 70px;
+            transition: transform 0.3s;
         }
         .social-logo:hover { transform: scale(1.4); }
-
-        footer { 
-            padding: 60px 20px; 
-            background: black; 
-            font-size: 1.4em; 
+        footer {
+            padding: 60px 20px;
+            background: black;
+            font-size: 1.4em;
         }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            body { padding-top: 180px; }
-            .logo { 
-                width: 90px; 
-                height: 90px; 
-                top: 80px; 
-                left: 50%; 
-                transform: translateX(-50%); 
+            nav {
+                padding: 20px 20px 15px;
+                flex-direction: column;
+            }
+            .logo {
+                width: 90px;
+                height: 90px;
                 border-width: 6px;
+                margin-bottom: 10px;
             }
-            nav { padding: 10px 0; }
-            nav ul { 
-                flex-direction: column; 
-                gap: 8px; 
+            nav ul {
+                gap: 10px;
             }
-            nav a { 
-                font-size: 1.2em; 
-                padding: 10px 20px; 
+            nav a {
+                font-size: 1.2em;
+                padding: 8px 14px;
+            }
+            .hero-content {
+                padding-top: 20px;
             }
             h1 { font-size: 4.5em; }
             h2 { font-size: 3em; }
             p { font-size: 1.4em; }
-            header { padding: 160px 20px 100px; }
+            header#home { min-height: 100vh; }
             .buy-btn { font-size: 2em; padding: 20px 40px; }
             .presale-banner { font-size: 1.5em; }
             section { padding: 60px 15px; }
         }
-
         @media (max-width: 480px) {
             h1 { font-size: 3.8em; }
             h2 { font-size: 2.5em; }
@@ -187,35 +233,32 @@
 <body>
     <div id="particles-js"></div>
 
-    <!-- Navigation (transparent, no black band) -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#tokenomics">Tokenomics</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#how-to-buy">How to Buy</a></li>
-            <li><a href="whitepaper.pdf" download>Whitepaper ↓</a></li>
-        </ul>
-    </nav>
-
-    <!-- Logo placed below nav -->
-    <img src="KOZHILOGO.jpg" alt="$KOZHI Logo" class="logo">
-
-    <!-- Hero -->
+    <!-- Full-screen Hero with rooster background -->
     <header id="home">
+        <!-- Navigation at the top -->
+        <nav>
+            <img src="KOZHILOGO.jpg" alt="$KOZHI Logo" class="logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#how-to-buy">How to Buy</a></li>
+                <li><a href="whitepaper.pdf" download>Whitepaper ↓</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero content moved below navigation -->
         <div class="hero-content">
             <h1>$KOZHI</h1>
             <h2>KOKARAKO KOOOOOOOO!!!</h2>
             <p>100% PURE MEMECOIN MADE FOR ABSOLUTELY NOTHING. JUST KERALA ROOSTER SCREAMING AT THE MOON 🐔🚀</p>
             <p>GUESS WHAT? CHICKEN BUTT... TO 100X!!!</p>
-
             <div class="presale-banner">
-                PRESALE LIVE NOW ON PINKSALE!<br>
-                ENDED SUCCESSFULLY – LISTING SOON!!! 🐔🔥
+                PRESALE ON PINKSALE!<br>
+                COMING SOON!!! 🐔🔥
             </div>
-
             <div style="margin:40px auto;padding:20px;background:rgba(0,0,0,0.6);border-radius:20px;max-width:900px;font-size:1.5em;">
                 <p><strong>Contract Address:</strong></p>
                 <div style="display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;margin:20px 0;">
@@ -224,7 +267,7 @@
                 </div>
                 <p><strong>Blockchain:</strong> Solana</p>
                 <a href="https://solscan.io/token/KoZhiNLCUVsY6xYJUH58aGirdYQUXNAhTyLRVWeHspv" target="_blank">
-                    <img src="SOLLOGO.jpg" alt="Solscan" style="width:60px;">
+                    <img src="SOLLOGO.png" alt="Solscan" style="width:60px;">
                 </a>
             </div>
         </div>
@@ -234,7 +277,6 @@
         <h2>INTRODUCTION</h2>
         <p>On a quiet farm in Kerala, ordinary roosters discovered the rare "$KOZHI," a treasure said to grant freedom to those who collect enough. One legendary rooster escaped, spreading $KOZHI across the world to inspire freedom. $KOZHI is a fun, chaotic memecoin on Solana — no utility, just pure rooster energy!</p>
         <p>KOKARAKO KOOOO!!! 🐔💥</p>
-
         <h2>WHY $KOZHI?</h2>
         <p>This rooster wakes up the blockchain at 5AM. Dogs sleep. Cats nap. $KOZHI crows chaos 24/7!</p>
         <div class="meme-gallery">
@@ -248,24 +290,24 @@
         <h2>TOKENOMICS</h2>
         <p><strong>Total Supply:</strong> 1,000,000,000 $KOZHI<br>
         <strong>Taxes:</strong> 0%<br>
-        <strong>Liquidity:</strong> Burned 🔥<br>
+        <strong>Liquidity:</strong> Will be burned upon launching on RAYDIUM🔥<br>
         <strong>Chain:</strong> Solana</p>
-
         <p><strong>Allocation:</strong><br>
-        Presale – 55% | Airdrop – 15% | Marketing – 10% | Liquidity – 10% | Project – 10%</p>
+        Presale – 25% | Airdrop – 5% | Marketing – 10% | Liquidity – 40% | Development tresuary – 20%</p>
     </section>
 
     <section id="roadmap">
         <h2>ROADMAP</h2>
         <p><strong>Phase 1:</strong> Presale, community growth, viral memes<br>
         <strong>Phase 2:</strong> Raydium listing, buyback & burn, marketing push<br>
-        <strong>Phase 3:</strong> NFTs, partnerships, rooster world domination</p>
+        <strong>Phase 3:</strong> NFTs, CEX listing, partnerships, rooster world domination</p>
         <p>But really... KOKARAKO KOOOO!!!</p>
     </section>
 
     <section id="team">
         <h2>TEAM</h2>
-        <p>Anonymous devs with solid experience. No rugs. Fair launch. Focused on fun and community.</p>
+        <p>Even though the dev and team remain anonymous to the public, all activities can be fully tracked on the blockchain explorer. This ensures complete transparency and builds real trust in the project.</p>
+        <p>No rugs. Fair launch. Focused on fun and community.</p>
         <p>We crow. You hold. We moon together. 🐔🚀</p>
     </section>
 
@@ -291,29 +333,26 @@
     <footer>
         <p>$KOZHI - PURE MEME ENERGY. DYOR. NO FINANCIAL ADVICE. JUST ROOSTER VIBES.</p>
         <p>KOKARAKO KOOOOOOOOOOOOOOOOOOOOOOOOOOO!!! 🐔💥😂</p>
-        <p style="font-size:1em;margin-top:30px;color:#aaa;">© 2025 $KOZHI Memecoin. All rights reserved.</p>
+        <p style="font-size:1em;margin-top:30px;color:#aaa;">© 2025 $KOZHI. All rights reserved.</p>
     </footer>
 
     <script>
         particlesJS("particles-js", {
-            particles: { 
-                number: { value: 160 }, 
-                color: { value: ["#ffffff", "#ffff00", "#ff0000", "#ff4500"] }, 
-                shape: { type: "circle" }, 
-                opacity: { value: 0.8 }, 
-                size: { value: 6 }, 
-                line_linked: { enable: false }, 
-                move: { enable: true, speed: 7, direction: "random" } 
+            particles: {
+                number: { value: 160 },
+                color: { value: ["#ffffff", "#ffff00", "#ff0000", "#ff4500"] },
+                shape: { type: "circle" },
+                opacity: { value: 0.8 },
+                size: { value: 6 },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 7, direction: "random" }
             },
-            interactivity: { 
-                detect_on: "canvas", 
-                events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" } } 
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" } }
             },
             retina_detect: true
         });
     </script>
 </body>
 </html>
-
-
-
