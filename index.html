@@ -18,7 +18,6 @@
             position: relative;
         }
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
-
         /* Full-screen hero with rooster background */
         header#home {
             background: url('REDROOSTERMIC.jpg') center/cover no-repeat;
@@ -37,12 +36,13 @@
             background: rgba(0,0,0,0.5);
             z-index: 0;
         }
-
         /* Navigation at the very top */
         nav {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            z-index: 10;
+            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -50,7 +50,6 @@
             background: transparent;
             box-sizing: border-box;
         }
-
         .logo {
             width: 120px;
             height: 120px;
@@ -61,7 +60,6 @@
             z-index: 11;
         }
         .logo:hover { transform: rotate(360deg) scale(1.2); }
-
         nav ul {
             list-style: none;
             display: flex;
@@ -71,7 +69,6 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-
         nav a {
             color: #FFD700;
             text-decoration: none;
@@ -89,17 +86,15 @@
             text-shadow: 0 0 20px lime;
             transform: scale(1.1);
         }
-
         /* Hero content starts below navigation */
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 1000px;
             width: 100%;
-            margin: 0 auto;
+            margin: 170px auto 0;
             padding-top: 40px; /* Space below navigation */
         }
-
         h1 {
             font-family: 'Bangers', cursive;
             font-size: 6em;
@@ -186,7 +181,6 @@
             background: black;
             font-size: 1.4em;
         }
-
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             nav {
@@ -208,6 +202,7 @@
             }
             .hero-content {
                 padding-top: 20px;
+                margin-top: 220px;
             }
             h1 { font-size: 4.5em; }
             h2 { font-size: 3em; }
@@ -223,8 +218,10 @@
             p { font-size: 1.2em; }
             nav a { font-size: 1.1em; }
             .logo { width: 80px; height: 80px; }
+            .hero-content {
+                margin-top: 200px;
+            }
         }
-
         @keyframes shake { 0% { transform: translate(0); } 25% { transform: translate(10px, -10px); } 50% { transform: translate(-10px, 10px); } 100% { transform: translate(0); } }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
         @keyframes bounce { 0% { transform: translateY(0); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0); } }
@@ -232,7 +229,6 @@
 </head>
 <body>
     <div id="particles-js"></div>
-
     <!-- Full-screen Hero with rooster background -->
     <header id="home">
         <!-- Navigation at the top -->
@@ -248,7 +244,6 @@
                 <li><a href="whitepaper.pdf" download>Whitepaper ↓</a></li>
             </ul>
         </nav>
-
         <!-- Hero content moved below navigation -->
         <div class="hero-content">
             <h1>$KOZHI</h1>
@@ -272,7 +267,6 @@
             </div>
         </div>
     </header>
-
     <section id="introduction">
         <h2>INTRODUCTION</h2>
         <p>On a quiet farm in Kerala, ordinary roosters discovered the rare "$KOZHI," a treasure said to grant freedom to those who collect enough. One legendary rooster escaped, spreading $KOZHI across the world to inspire freedom. $KOZHI is a fun, chaotic memecoin on Solana — no utility, just pure rooster energy!</p>
@@ -285,7 +279,6 @@
             <img src="REDROOSTERSTANDINGMIC.jpg" alt="Meme 3" class="meme">
         </div>
     </section>
-
     <section id="tokenomics">
         <h2>TOKENOMICS</h2>
         <p><strong>Total Supply:</strong> 1,000,000,000 $KOZHI<br>
@@ -295,7 +288,6 @@
         <p><strong>Allocation:</strong><br>
         Presale – 25% | Airdrop – 5% | Marketing – 10% | Liquidity – 40% | Development tresuary – 20%</p>
     </section>
-
     <section id="roadmap">
         <h2>ROADMAP</h2>
         <p><strong>Phase 1:</strong> Presale, community growth, viral memes<br>
@@ -303,23 +295,20 @@
         <strong>Phase 3:</strong> NFTs, CEX listing, partnerships, rooster world domination</p>
         <p>But really... KOKARAKO KOOOO!!!</p>
     </section>
-
     <section id="team">
         <h2>TEAM</h2>
         <p>Even though the dev and team remain anonymous to the public, all activities can be fully tracked on the blockchain explorer. This ensures complete transparency and builds real trust in the project.</p>
         <p>No rugs. Fair launch. Focused on fun and community.</p>
         <p>We crow. You hold. We moon together. 🐔🚀</p>
     </section>
-
     <section id="how-to-buy">
         <h2>HOW TO BUY</h2>
         <p>1. Get Phantom Wallet<br>
         2. Load SOL<br>
-        3. Swap on Raydium/Jupiter<br>
+        3. Swap on Raydium (comming soon)<br>
         4. Hold & scream KOKARAKO KOOOO!!!</p>
         <button class="buy-btn">BUY $KOZHI NOW</button>
     </section>
-
     <section>
         <h2>JOIN THE FLOCK</h2>
         <div class="social-logos">
@@ -329,13 +318,11 @@
         </div>
         <p>Send your best chicken memes or get egged 🥚</p>
     </section>
-
     <footer>
         <p>$KOZHI - PURE MEME ENERGY. DYOR. NO FINANCIAL ADVICE. JUST ROOSTER VIBES.</p>
         <p>KOKARAKO KOOOOOOOOOOOOOOOOOOOOOOOOOOO!!! 🐔💥😂</p>
         <p style="font-size:1em;margin-top:30px;color:#aaa;">© 2025 $KOZHI. All rights reserved.</p>
     </footer>
-
     <script>
         particlesJS("particles-js", {
             particles: {
