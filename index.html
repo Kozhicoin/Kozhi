@@ -18,7 +18,6 @@
             position: relative;
         }
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
-        /* Full-screen hero with rooster background */
         header#home {
             background: url('REDROOSTERMIC.jpg') center/cover no-repeat;
             position: relative;
@@ -36,7 +35,6 @@
             background: rgba(0,0,0,0.5);
             z-index: 0;
         }
-        /* Navigation at the very top */
         nav {
             position: fixed;
             top: 0;
@@ -46,7 +44,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 30px 40px 20px; /* Extra top padding for breathing room */
+            padding: 30px 40px 20px;
             background: transparent;
             box-sizing: border-box;
         }
@@ -86,14 +84,13 @@
             text-shadow: 0 0 20px lime;
             transform: scale(1.1);
         }
-        /* Hero content starts below navigation */
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 1000px;
             width: 100%;
             margin: 170px auto 0;
-            padding-top: 40px; /* Space below navigation */
+            padding-top: 40px;
         }
         h1 {
             font-family: 'Bangers', cursive;
@@ -183,7 +180,33 @@
             background: black;
             font-size: 1.4em;
         }
-        /* Mobile Responsiveness */
+        /* New styles for badges */
+        .audit-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        .badge-item {
+            text-align: center;
+        }
+        .badge-item img {
+            width: 140px;
+            height: auto;
+            border: 5px solid lime;
+            border-radius: 16px;
+            box-shadow: 0 0 25px lime;
+            transition: transform 0.3s;
+        }
+        .badge-item img:hover {
+            transform: scale(1.15);
+        }
+        .badge-item p {
+            margin: 8px 0 0;
+            font-size: 1.3em;
+            text-shadow: 2px 2px black;
+        }
         @media (max-width: 768px) {
             nav {
                 padding: 20px 20px 15px;
@@ -213,6 +236,7 @@
             .buy-btn { font-size: 2em; padding: 20px 40px; }
             .presale-banner { font-size: 1.5em; }
             section { padding: 60px 15px; }
+            .badge-item img { width: 110px; }
         }
         @media (max-width: 480px) {
             h1 { font-size: 3.8em; }
@@ -223,6 +247,8 @@
             .hero-content {
                 margin-top: 200px;
             }
+            .audit-badges { gap: 15px; }
+            .badge-item img { width: 100px; }
         }
         @keyframes shake { 0% { transform: translate(0); } 25% { transform: translate(10px, -10px); } 50% { transform: translate(-10px, 10px); } 100% { transform: translate(0); } }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
@@ -231,9 +257,7 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    <!-- Full-screen Hero with rooster background -->
     <header id="home">
-        <!-- Navigation at the top -->
         <nav>
             <img src="KOZHILOGO.jpg" alt="$KOZHI Logo" class="logo">
             <ul>
@@ -246,7 +270,6 @@
                 <li><a href="Kozhi_Whitepaper V01.pdf" download>Whitepaper ↓</a></li>
             </ul>
         </nav>
-        <!-- Hero content moved below navigation -->
         <div class="hero-content">
             <h1>$KOZHI</h1>
             <h2>KOKARAKO KOOOOOOOO!!!</h2>
@@ -268,9 +291,27 @@
                 <a href="https://solscan.io/token/KoZhiNLCUVsY6xYJUH58aGirdYQUXNAhTyLRVWeHspv" target="_blank">
                     <img src="SOLLOGO.png" alt="Solscan" style="width:60px;">
                 </a>
+
+                <!-- Added ContractWolf Audit & KYC Badges here -->
+                <div class="audit-badges">
+                    <div class="badge-item">
+                        <a href="https://contractwolf.io/audit/YOUR_AUDIT_REPORT_LINK" target="_blank" title="View ContractWolf Audit Report">
+                            <img src="https://via.placeholder.com/140x140/00ff00/000000?text=ContractWolf+Audit" alt="ContractWolf Audit Badge">
+                        </a>
+                        <p>Audited by ContractWolf</p>
+                    </div>
+                    <div class="badge-item">
+                        <a href="https://contractwolf.io/kyc/YOUR_KYC_LINK_OR_PROFILE" target="_blank" title="View ContractWolf KYC Verification">
+                            <img src="https://via.placeholder.com/140x140/00ff00/000000?text=ContractWolf+KYC" alt="ContractWolf KYC Badge">
+                        </a>
+                        <p>KYC Verified by ContractWolf</p>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Rest of your sections remain unchanged -->
     <section id="introduction">
         <h2>INTRODUCTION</h2>
         <p>On a quiet farm in Kerala, ordinary roosters discovered the rare "$KOZHI," a treasure said to grant freedom to those who collect enough. One legendary rooster escaped, spreading $KOZHI across the world to inspire freedom. $KOZHI is a fun, chaotic memecoin on Solana — no utility, just pure rooster energy!</p>
@@ -283,6 +324,7 @@
             <img src="REDROOSTERSTANDINGMIC.jpg" alt="Meme 3" class="meme">
         </div>
     </section>
+
     <section id="tokenomics">
         <h2>TOKENOMICS</h2>
         <p><strong>Total Supply:</strong> 1,000,000,000 $KOZHI<br>
@@ -292,6 +334,7 @@
         <p><strong>Allocation:</strong><br>
         Presale – 25% | Airdrop – 5% | Marketing – 10% | Liquidity – 40% | Development tresuary – 20%</p>
     </section>
+
     <section id="roadmap">
         <h2>ROADMAP</h2>
         <p><strong>Phase 1:</strong> Presale, community growth, viral memes<br>
@@ -299,12 +342,14 @@
         <strong>Phase 3:</strong> NFTs, CEX listing, partnerships, rooster world domination</p>
         <p>But really... KOKARAKO KOOOO!!!</p>
     </section>
+
     <section id="team">
         <h2>TEAM</h2>
         <p>Even though the dev and team remain anonymous to the public, all activities can be fully tracked on the blockchain explorer. This ensures complete transparency and builds real trust in the project.</p>
         <p>No rugs. Fair launch. Focused on fun and community.</p>
         <p>We crow. You hold. We moon together. 🐔🚀</p>
     </section>
+
     <section id="how-to-buy">
         <h2>HOW TO BUY</h2>
         <p>1. Get Phantom Wallet<br>
@@ -313,6 +358,7 @@
         4. Hold & scream KOKARAKO KOOOO!!!</p>
         <button class="buy-btn">BUY $KOZHI NOW</button>
     </section>
+
     <section>
         <h2>JOIN THE FLOCK</h2>
         <div class="social-logos">
@@ -322,11 +368,30 @@
         </div>
         <p>Send your best chicken memes or get egged 🥚</p>
     </section>
+
     <footer>
         <p>$KOZHI - PURE MEME ENERGY. DYOR. NO FINANCIAL ADVICE. JUST ROOSTER VIBES.</p>
         <p>KOKARAKO KOOOOOOOOOOOOOOOOOOOOOOOOOOO!!! 🐔💥😂</p>
+
+        <!-- Badges repeated in footer for extra trust -->
+        <div class="audit-badges" style="margin-top: 30px;">
+            <div class="badge-item">
+                <a href="https://github.com/ContractWolf/smart-contract-audits/blob/main/ContractWolf_Audit_KOZHI.pdf" target="_blank">
+                    <img src="rawlogos_CW-2.png" alt="ContractWolf Audit Badge">
+                </a>
+                <p>Audited</p>
+            </div>
+            <div class="badge-item">
+                <a href="https://github.com/ContractWolf/KYC-certificates/blob/main/2026-KYC/KYC_KOZHI.jpg" target="_blank">
+                    <img src="rawlogos_KYCBadge.png" alt="ContractWolf KYC Badge">
+                </a>
+                <p>KYC Verified</p>
+            </div>
+        </div>
+
         <p style="font-size:1em;margin-top:30px;color:#aaa;">© 2025 $KOZHI. All rights reserved.</p>
     </footer>
+
     <script>
         particlesJS("particles-js", {
             particles: {
@@ -347,5 +412,3 @@
     </script>
 </body>
 </html>
-
-
