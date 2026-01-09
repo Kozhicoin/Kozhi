@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>$KOZHI — KOKARAKO KOOOO!!! 🐔</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$KOZHI – KOKARAKO KOOOO 🐔</title>
 
-<link rel="icon" href="KOZHILOGO.jpg" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Bangers&display=swap" rel="stylesheet">
+<link rel="icon" href="KOZHILOGO.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <style>
 :root{
-  --red:#ff2b2b;
-  --yellow:#ffd700;
-  --lime:#00ff7f;
-  --dark:#0b0b0b;
-  --glass:rgba(255,255,255,.08);
+  --gold:#FFD700;
+  --orange:#ff4500;
+  --dark:#0a0000;
 }
 
-*{box-sizing:border-box;scroll-behavior:smooth}
+*{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:Poppins,sans-serif;
-  background:radial-gradient(circle at top,#ff4500,#120000 60%);
+  font-family:'Comic Neue',cursive;
   color:#fff;
   text-align:center;
+  background:linear-gradient(180deg,#ff4500,#120000 70%);
   overflow-x:hidden;
 }
 
-/* PARTICLES */
 #particles-js{
   position:fixed;
   inset:0;
@@ -41,42 +38,42 @@ nav{
   position:fixed;
   top:0;
   width:100%;
-  padding:18px 40px;
+  padding:20px 40px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background:rgba(0,0,0,.6);
-  backdrop-filter:blur(10px);
   z-index:1000;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(10px);
 }
 
 .logo{
-  width:70px;
+  width:90px;
   border-radius:50%;
-  transition:.5s;
+  transition:.4s;
 }
-.logo:hover{transform:rotate(360deg) scale(1.15)}
+.logo:hover{transform:rotate(360deg) scale(1.1)}
 
 nav ul{
-  display:flex;
   list-style:none;
-  gap:14px;
+  display:flex;
+  gap:16px;
   padding:0;
   margin:0;
   flex-wrap:wrap;
 }
 
 nav a{
-  color:var(--yellow);
+  color:var(--gold);
   text-decoration:none;
-  font-weight:600;
+  font-weight:bold;
+  font-size:1.1em;
   padding:8px 14px;
   border-radius:12px;
   transition:.3s;
 }
 nav a:hover{
-  background:var(--glass);
-  box-shadow:0 0 15px rgba(255,215,0,.5);
+  background:rgba(255,255,255,.15);
 }
 
 /* HERO */
@@ -85,143 +82,128 @@ header{
   display:flex;
   align-items:center;
   justify-content:center;
-  background:url('REDROOSTERMIC.jpg') center/cover no-repeat;
-  position:relative;
+  padding:160px 20px 80px;
 }
 
-header::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.6);
+.hero-box{
+  max-width:1000px;
+  background:rgba(0,0,0,.65);
+  padding:60px 40px;
+  border-radius:30px;
+  box-shadow:0 0 40px rgba(255,140,0,.4);
 }
 
-.hero{
-  position:relative;
-  max-width:1100px;
-  padding:140px 20px 80px;
-}
-
-.hero h1{
-  font-family:Bangers,cursive;
-  font-size:6rem;
+h1{
+  font-family:'Bangers',cursive;
+  font-size:5em;
   margin:0;
-  text-shadow:0 0 40px red;
+  animation:shake 1.5s infinite;
+}
+h2{
+  font-family:'Bangers',cursive;
+  font-size:3em;
+  margin:20px 0;
 }
 
-.hero h2{
-  font-family:Bangers,cursive;
-  font-size:3rem;
-  margin:10px 0 30px;
-  color:var(--yellow);
-}
-
-.hero p{
-  font-size:1.3rem;
-  max-width:850px;
-  margin:12px auto;
-  opacity:.95;
+p{
+  font-size:1.4em;
+  line-height:1.6;
 }
 
 /* BUTTON */
-.btn{
+.buy-btn{
   display:inline-block;
   margin:30px auto;
   padding:18px 40px;
-  font-size:1.5rem;
-  font-weight:800;
+  font-size:1.6em;
+  background:linear-gradient(135deg,#ffd700,#ff4500);
   color:#000;
-  background:linear-gradient(135deg,var(--yellow),#ffb300);
   border-radius:50px;
   text-decoration:none;
-  box-shadow:0 0 30px rgba(255,215,0,.7);
-  transition:.35s;
+  font-weight:bold;
+  animation:bounce 1s infinite;
 }
-.btn:hover{transform:scale(1.15) rotate(-2deg)}
 
-/* GLASS CARDS */
-.card{
-  background:rgba(0,0,0,.75);
-  backdrop-filter:blur(8px);
-  border-radius:30px;
-  padding:60px 30px;
+/* SECTIONS */
+section{
   max-width:1200px;
-  margin:80px auto;
-  box-shadow:0 0 40px rgba(255,255,255,.08);
+  margin:60px auto;
+  padding:70px 25px;
+  background:rgba(0,0,0,.85);
+  border-radius:30px;
 }
 
-h2.section-title{
-  font-family:Bangers,cursive;
-  font-size:3rem;
-  color:var(--yellow);
-  margin-bottom:25px;
-}
-
-/* CONTRACT */
-.contract{
-  background:var(--glass);
-  border-radius:16px;
-  padding:15px;
-  word-break:break-all;
+.meme-gallery{
   display:flex;
-  gap:10px;
-  justify-content:center;
-  align-items:center;
-}
-.copy{cursor:pointer;font-size:1.5rem}
-
-/* MEMES */
-.memes{
-  display:flex;
-  flex-wrap:wrap;
   gap:20px;
   justify-content:center;
+  flex-wrap:wrap;
 }
-.memes img{
+.meme{
   width:260px;
   border-radius:50%;
   transition:.4s;
 }
-.memes img:hover{transform:rotate(360deg) scale(1.15)}
+.meme:hover{transform:rotate(360deg) scale(1.15)}
+
+/* LINKS */
+a.token-link{
+  color:#00ffea;
+  word-break:break-all;
+}
 
 /* BADGES */
-.badges{
+.audit-badges{
   display:flex;
+  justify-content:center;
   gap:25px;
-  justify-content:center;
   flex-wrap:wrap;
+  margin-top:30px;
 }
-.badges img{
-  width:130px;
-  border-radius:12px;
-  box-shadow:0 0 20px rgba(255,215,0,.4);
-}
-
-/* SOCIAL */
-.social{
-  display:flex;
-  gap:40px;
-  justify-content:center;
-}
-.social img{
-  width:65px;
+.audit-badges img{
+  width:120px;
   transition:.3s;
 }
-.social img:hover{transform:scale(1.3)}
+.audit-badges img:hover{transform:scale(1.1)}
+
+/* SOCIAL */
+.social-logos{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:30px;
+}
+.social-logo{
+  width:60px;
+  transition:.3s;
+}
+.social-logo:hover{transform:scale(1.3)}
 
 /* FOOTER */
 footer{
   padding:60px 20px;
   background:#000;
-  font-size:1rem;
-  opacity:.9;
+  font-size:1.2em;
+  color:#aaa;
+}
+
+/* ANIMATIONS */
+@keyframes shake{
+  0%{transform:translate(0)}
+  25%{transform:translate(8px,-8px)}
+  50%{transform:translate(-8px,8px)}
+  100%{transform:translate(0)}
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
 }
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero h1{font-size:4.5rem}
-  .hero h2{font-size:2.4rem}
-  nav{padding:12px}
+  h1{font-size:3.8em}
+  h2{font-size:2.4em}
+  nav{flex-direction:column}
 }
 </style>
 </head>
@@ -231,103 +213,114 @@ footer{
 <div id="particles-js"></div>
 
 <nav>
-  <img src="KOZHILOGO.jpg" class="logo" alt="$KOZHI Logo"/>
+  <img src="KOZHILOGO.jpg" class="logo">
   <ul>
     <li><a href="#home">Home</a></li>
-    <li><a href="#intro">Intro</a></li>
+    <li><a href="#introduction">Intro</a></li>
     <li><a href="#tokenomics">Tokenomics</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#team">Team</a></li>
-    <li><a href="#buy">Buy</a></li>
+    <li><a href="#how">How to Buy</a></li>
     <li><a href="Kozhi_Whitepaper V01.pdf" download>Whitepaper</a></li>
   </ul>
 </nav>
 
 <header id="home">
-  <div class="hero">
+  <div class="hero-box">
     <h1>$KOZHI</h1>
     <h2>KOKARAKO KOOOO!!!</h2>
-    <p>100% PURE MEMECOIN. ZERO UTILITY. MAXIMUM ROOSTER ENERGY.</p>
+    <p>Pure meme energy on Solana. No utility. No mercy. Just rooster chaos 🐔</p>
 
-    <a href="https://solsale.app/presale/DLJydv7X5iuMThr4MfZhGf7MqpaaCZKewWs6WKnXB3bR" target="_blank" class="btn">
-      PRESALE LIVE — BUY NOW
+    <a class="buy-btn" target="_blank"
+       href="https://solsale.app/presale/DLJydv7X5iuMThr4MfZhGf7MqpaaCZKewWs6WKnXB3bR">
+       JOIN PRESALE
     </a>
 
-    <div class="contract">
-      KoZhiNLCUVsY6xYJUH58aGirdYQUXNAhTyLRVWeHspv
-      <span class="copy" onclick="navigator.clipboard.writeText('KoZhiNLCUVsY6xYJUH58aGirdYQUXNAhTyLRVWeHspv')">📋</span>
-    </div>
+    <p>
+      <strong>Contract:</strong><br>
+      <a class="token-link" target="_blank"
+         href="https://solscan.io/token/KoZhiNLCUVsY6xYJUH58aGirdYQUXNAhTyLRVWeHspv">
+        KoZhiNLCUVsY6xYJUH58aGirdYQUXNAhTyLRVWeHspv
+      </a>
+    </p>
 
-    <div class="badges" style="margin-top:30px">
-      <a href="https://contractwolf.io/projects/kozhi" target="_blank">
-        <img src="rawlogos_badge3.png" alt="ContractWolf Audit Badge">
+    <p>
+      <a target="_blank" href="https://solscan.io/token/KoZhiNLCUVsY6xYJUH58aGirdYQUXNAhTyLRVWeHspv">
+        <img src="SOLLOGO.png" width="60">
+      </a>
+    </p>
+
+    <div class="audit-badges">
+      <a target="_blank" href="https://contractwolf.io/projects/kozhi">
+        <img src="rawlogos_badge3.png">
       </a>
     </div>
   </div>
 </header>
 
-<section id="intro" class="card">
-  <h2 class="section-title">INTRODUCTION</h2>
-  <p>$KOZHI was born on a Kerala farm. It escaped. It crowed. It memed.</p>
-  <div class="memes">
-    <img src="GIRLCUP.jpg">
-    <img src="REDROOSTERMIC1.jpg">
-    <img src="REDROOSTERSTANDINGMIC.jpg">
-  </div>
+<section id="introduction">
+<h2>INTRODUCTION</h2>
+<p>$KOZHI is a chaotic Solana memecoin inspired by the legendary Kerala rooster. No promises. Just vibes.</p>
+
+<div class="meme-gallery">
+  <img src="GIRLCUP.jpg" class="meme">
+  <img src="REDROOSTERMIC1.jpg" class="meme">
+  <img src="REDROOSTERSTANDINGMIC.jpg" class="meme">
+</div>
 </section>
 
-<section id="tokenomics" class="card">
-  <h2 class="section-title">TOKENOMICS</h2>
-  <p>
-    Total Supply: 1,000,000,000 $KOZHI<br>
-    Tax: 0%<br>
-    Liquidity: Burned 🔥<br>
-    Chain: Solana
-  </p>
+<section id="tokenomics">
+<h2>TOKENOMICS</h2>
+<p>
+Total Supply: 1B<br>
+Tax: 0%<br>
+Liquidity Burned 🔥<br>
+Chain: Solana
+</p>
 </section>
 
-<section id="roadmap" class="card">
-  <h2 class="section-title">ROADMAP</h2>
-  <p>
-    Phase 1: Presale & Viral Memes<br>
-    Phase 2: Raydium Listing & Burns<br>
-    Phase 3: NFTs, CEX & Domination
-  </p>
+<section id="roadmap">
+<h2>ROADMAP</h2>
+<p>
+Phase 1: Presale & Memes<br>
+Phase 2: Raydium + Burn<br>
+Phase 3: NFTs, CEX, Domination
+</p>
 </section>
 
-<section id="team" class="card">
-  <h2 class="section-title">TEAM</h2>
-  <p>Anonymous team. Fully transparent. 100% on-chain.</p>
+<section id="how">
+<h2>HOW TO BUY</h2>
+<p>
+1. Phantom Wallet<br>
+2. Load SOL<br>
+3. Buy on Raydium<br>
+4. Hold & crow 🐔
+</p>
 </section>
 
-<section id="buy" class="card">
-  <h2 class="section-title">HOW TO BUY</h2>
-  <p>Phantom → SOL → Raydium → KOKARAKO</p>
-</section>
-
-<section class="card">
-  <h2 class="section-title">JOIN THE FLOCK</h2>
-  <div class="social">
-    <a href="https://x.com/kozhicoin" target="_blank"><img src="XLOGO.png"></a>
-    <a href="https://t.me/kozhicoin" target="_blank"><img src="TELEGRAMLOGO.png"></a>
-    <a href="https://discord.com/channels/1453068967563366513/1453069036148625560" target="_blank"><img src="DISCORDLOGO.png"></a>
-  </div>
+<section>
+<h2>JOIN THE FLOCK</h2>
+<div class="social-logos">
+  <a target="_blank" href="https://x.com/kozhicoin"><img src="XLOGO.png" class="social-logo"></a>
+  <a target="_blank" href="https://t.me/kozhicoin"><img src="TELEGRAMLOGO.png" class="social-logo"></a>
+  <a target="_blank" href="https://discord.com/channels/1453068967563366513/1453069036148625560"><img src="DISCORDLOGO.png" class="social-logo"></a>
+</div>
 </section>
 
 <footer>
-  <p>$KOZHI — PURE MEME ENERGY. DYOR.</p>
-  <p>© 2025 $KOZHI. All rights reserved.</p>
+<p>© 2025 $KOZHI — DYOR. Meme responsibly.</p>
 </footer>
 
 <script>
 particlesJS("particles-js",{
-  particles:{
-    number:{value:120},
-    color:{value:["#ffffff","#ffd700","#ff0000"]},
-    size:{value:4},
-    move:{speed:3}
-  },
-  retina_detect:true
+particles:{
+number:{value:120},
+color:{value:["#fff","#ffd700","#ff4500"]},
+size:{value:4},
+move:{enable:true,speed:4}
+},
+interactivity:{
+events:{onhover:{enable:true,mode:"repulse"}}
+}
 });
 </script>
 
